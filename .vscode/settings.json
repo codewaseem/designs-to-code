@@ -60,8 +60,5 @@
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "cSpell.words": [
-    "Pinterest",
-    "livvic"
-  ]
+  "cSpell.words": ["Pinterest", "livvic"]
 }
