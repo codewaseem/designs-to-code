@@ -36,6 +36,7 @@ const SkillHeading = styled.h3`
   font-size: 16px;
   line-height: 15px;
   margin-left: 5px;
+  margin-bottom: 10px;
 `;
 const SkillsWrapper = styled.div`
   padding: 20px;
