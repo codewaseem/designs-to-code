@@ -40,7 +40,7 @@ const SEO: React.FC<Props> = ({
           {/* OG tags */}
           <meta
             property="og:url"
-            content={process.env.GATSBY_SITE_URL + location.pathname}
+            content={`https://designs-to-code.netlify.app/${location.pathname}`}
           />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
