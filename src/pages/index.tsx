@@ -147,7 +147,10 @@ const CtaButtonAccent = styled(CtaButton)`
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
     <Layout>
-      <SEO title="Hello" />
+      <SEO
+        title="Designs to Code"
+        description="Here I code designs from https://uidesigndaily.com"
+      />
       <div
         css={css`
           background: #28223f;

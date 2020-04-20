@@ -13,8 +13,13 @@ type Props = {
 /**
  * An SEO component that handles all element in the head that can accept
  */
-const SEO: React.FC<Props> = ({ children, description = "", title, intl }) => {
-  const metaDescription = description || "Designs to Code";
+const SEO: React.FC<Props> = ({
+  children,
+  description = "Designs to Code",
+  title,
+  intl,
+}) => {
+  const metaDescription = description;
 
   return (
     <Location>
