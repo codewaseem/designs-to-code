@@ -23,13 +23,6 @@ const plugins = [
       redirect: false,
     },
   },
-  {
-    resolve: "gatsby-plugin-google-fonts",
-    options: {
-      fonts: [`Lora:400,700`],
-      display: "swap",
-    },
-  },
 ];
 
 // Bundle analyzer, dev only
