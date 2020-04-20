@@ -161,7 +161,7 @@ const Index: React.FC<InjectedIntlProps> = () => {
           css={css`
             display: grid;
             height: 100%;
-            min-height: 100vh;
+            min-height: 95vh;
             justify-content: center;
             align-items: center;
             align-content: center;
