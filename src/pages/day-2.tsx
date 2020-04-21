@@ -3,6 +3,7 @@ import styled from "@theme/styled";
 import ProfilePicPng from "~/assets/images/day-2-pic.png";
 import G1 from "~/assets/images/d2-g1.png";
 import G2 from "~/assets/images/d2-g2.png";
+import { Layout } from "../components/Layout";
 
 const BellIcon = () => (
   <svg
@@ -283,72 +284,74 @@ const Plus = styled.span`
 
 export default function Day2() {
   return (
-    <PageContainer>
-      <PageContent>
-        <FancyBorder />
-        <DashboardContainer>
-          <DashboardHeader>
-            <HeaderNavigation>
-              <ul>
-                <li>Dashboard</li>
-                <li>Projects</li>
-                <li>Users</li>
-              </ul>
-            </HeaderNavigation>
-            <HeaderMenuBar>
-              <Button>
-                {" "}
-                <Plus>+</Plus> Add new segment
-              </Button>
-              <NotificationIcon>
-                <BellIcon />
-                <i>3</i>
-              </NotificationIcon>
-              <ProfilePic src={ProfilePicPng} alt="me" />
-            </HeaderMenuBar>
-          </DashboardHeader>
-          <DashboardAside>
-            <OvalEffect />
-            <AsideText>Upgrade to PRO to unlock more features</AsideText>
-            <Button>Upgrade</Button>
-          </DashboardAside>
-          <DashboardMain>
-            <StatsDetails>
-              <h3>Users</h3>
-              <h1>9,452</h1>
-              <img src={G1} alt="Graph One" />
-            </StatsDetails>
-            <StatsDetails>
-              <h3>New users</h3>
-              <h1>6,245</h1>
-              <img src={G2} alt="Graph Two" />
-            </StatsDetails>
-            <MainContentFooter>
-              <section>
-                <Stats>
-                  <StatsColor />
-                  <StatsText>24% Direct</StatsText>
-                </Stats>
-                <StatsProgressLeft />
-              </section>
-              <section>
-                <Stats>
-                  <StatsColor />
-                  <StatsText>31% Social</StatsText>
-                </Stats>
-                <StatsProgress />
-              </section>
-              <section>
-                <Stats>
-                  <StatsColor />
-                  <StatsText>45% Organic</StatsText>
-                </Stats>
-                <StatsProgressRight />
-              </section>
-            </MainContentFooter>
-          </DashboardMain>
-        </DashboardContainer>
-      </PageContent>
-    </PageContainer>
+    <Layout>
+      <PageContainer>
+        <PageContent>
+          <FancyBorder />
+          <DashboardContainer>
+            <DashboardHeader>
+              <HeaderNavigation>
+                <ul>
+                  <li>Dashboard</li>
+                  <li>Projects</li>
+                  <li>Users</li>
+                </ul>
+              </HeaderNavigation>
+              <HeaderMenuBar>
+                <Button>
+                  {" "}
+                  <Plus>+</Plus> Add new segment
+                </Button>
+                <NotificationIcon>
+                  <BellIcon />
+                  <i>3</i>
+                </NotificationIcon>
+                <ProfilePic src={ProfilePicPng} alt="me" />
+              </HeaderMenuBar>
+            </DashboardHeader>
+            <DashboardAside>
+              <OvalEffect />
+              <AsideText>Upgrade to PRO to unlock more features</AsideText>
+              <Button>Upgrade</Button>
+            </DashboardAside>
+            <DashboardMain>
+              <StatsDetails>
+                <h3>Users</h3>
+                <h1>9,452</h1>
+                <img src={G1} alt="Graph One" />
+              </StatsDetails>
+              <StatsDetails>
+                <h3>New users</h3>
+                <h1>6,245</h1>
+                <img src={G2} alt="Graph Two" />
+              </StatsDetails>
+              <MainContentFooter>
+                <section>
+                  <Stats>
+                    <StatsColor />
+                    <StatsText>24% Direct</StatsText>
+                  </Stats>
+                  <StatsProgressLeft />
+                </section>
+                <section>
+                  <Stats>
+                    <StatsColor />
+                    <StatsText>31% Social</StatsText>
+                  </Stats>
+                  <StatsProgress />
+                </section>
+                <section>
+                  <Stats>
+                    <StatsColor />
+                    <StatsText>45% Organic</StatsText>
+                  </Stats>
+                  <StatsProgressRight />
+                </section>
+              </MainContentFooter>
+            </DashboardMain>
+          </DashboardContainer>
+        </PageContent>
+      </PageContainer>
+    </Layout>
   );
 }
