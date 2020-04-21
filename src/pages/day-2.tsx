@@ -99,7 +99,7 @@ const DashboardMain = styled.main`
   grid-gap: 20px;
   grid-column: 2 / -1;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1fr 118px;
 
   > * {
     background: white;
@@ -108,6 +108,12 @@ const DashboardMain = styled.main`
 
 const MainContentFooter = styled.footer`
   grid-column: 1 / -1;
+  box-shadow: 0px 8px 15px #7746f0;
+  border-radius: 5px;
+  padding: 35px 30px;
+  display: grid;
+  grid-template-columns: 24% 31% 45%;
+  grid-column-gap: 2px;
 `;
 
 const Button = styled.button`
@@ -209,6 +215,42 @@ const ProfilePic = styled.img`
   border: 2px solid lightgreen;
 `;
 
+const Stats = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const StatsText = styled.span`
+  font-size: 14px;
+  line-height: 18px;
+  color: #0e0d1e;
+`;
+const StatsColor = styled.span`
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #7972e9;
+`;
+
+const StatsProgress = styled.div`
+  height: 15px;
+  background: #918bed;
+  border-radius: 2px;
+  margin-top: 15px;
+`;
+
+const StatsProgressLeft = styled(StatsProgress)`
+  background: #7972e9;
+  border-radius: 100px 2px 2px 100px;
+`;
+
+const StatsProgressRight = styled(StatsProgress)`
+  background: #ad91f1;
+  border-radius: 2px 100px 100px 2px;
+`;
+
 export default function Day2() {
   return (
     <PageContainer>
@@ -240,7 +282,29 @@ export default function Day2() {
           <DashboardMain>
             <section />
             <section />
-            <MainContentFooter />
+            <MainContentFooter>
+              <section>
+                <Stats>
+                  <StatsColor />
+                  <StatsText>24% Direct</StatsText>
+                </Stats>
+                <StatsProgressLeft />
+              </section>
+              <section>
+                <Stats>
+                  <StatsColor />
+                  <StatsText>31% Social</StatsText>
+                </Stats>
+                <StatsProgress />
+              </section>
+              <section>
+                <Stats>
+                  <StatsColor />
+                  <StatsText>45% Organic</StatsText>
+                </Stats>
+                <StatsProgressRight />
+              </section>
+            </MainContentFooter>
           </DashboardMain>
         </DashboardContainer>
       </PageContent>
