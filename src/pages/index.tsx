@@ -2,7 +2,7 @@ import React from "react";
 import { injectIntl, InjectedIntlProps } from "gatsby-plugin-intl";
 import { Layout } from "~/components/Layout";
 import { SEO } from "~/components/SEO";
-import ProfileCard from "./day-1";
+import Day2 from "./day-2";
 
 const Index: React.FC<InjectedIntlProps> = () => {
   return (
@@ -11,7 +11,7 @@ const Index: React.FC<InjectedIntlProps> = () => {
         title="Designs to Code"
         description="Here I code designs from https://uidesigndaily.com"
       />
-      <ProfileCard />
+      <Day2 />
     </Layout>
   );
 };
