@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "@theme/styled";
 import ProfilePicPng from "~/assets/images/day-2-pic.png";
+import G1 from "~/assets/images/d2-g1.png";
+import G2 from "~/assets/images/d2-g2.png";
 
 const BellIcon = () => (
   <svg
@@ -59,7 +61,7 @@ const DashboardContainer = styled.div`
   margin: auto;
   display: grid;
   grid-template-columns: 283px 1fr;
-  grid-template-rows: 118px 315px;
+  grid-template-rows: 118px 1fr;
   grid-gap: 35px;
   z-index: 1;
 `;
@@ -81,6 +83,7 @@ const DashboardHeader = styled.header`
     padding: 18px 25px;
     box-shadow: 0px 11px 20px rgba(157, 116, 255, 0.7);
     border-radius: 5px;
+    display: flex;
   }
 `;
 
@@ -251,6 +254,33 @@ const StatsProgressRight = styled(StatsProgress)`
   border-radius: 2px 100px 100px 2px;
 `;
 
+const StatsDetails = styled.div`
+  border-radius: 5px;
+  padding: 25px 30px;
+
+  h3 {
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    font-weight: normal;
+    color: #2a2847;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 1px auto 16px;
+    color: #2a2847;
+  }
+`;
+
+const Plus = styled.span`
+  font-size: 32px;
+  display: inline-block;
+  margin-right: 10px;
+`;
+
 export default function Day2() {
   return (
     <PageContainer>
@@ -266,7 +296,10 @@ export default function Day2() {
               </ul>
             </HeaderNavigation>
             <HeaderMenuBar>
-              <Button>+ Add new segment</Button>
+              <Button>
+                {" "}
+                <Plus>+</Plus> Add new segment
+              </Button>
               <NotificationIcon>
                 <BellIcon />
                 <i>3</i>
@@ -280,8 +313,16 @@ export default function Day2() {
             <Button>Upgrade</Button>
           </DashboardAside>
           <DashboardMain>
-            <section />
-            <section />
+            <StatsDetails>
+              <h3>Users</h3>
+              <h1>9,452</h1>
+              <img src={G1} alt="Graph One" />
+            </StatsDetails>
+            <StatsDetails>
+              <h3>New users</h3>
+              <h1>6,245</h1>
+              <img src={G2} alt="Graph Two" />
+            </StatsDetails>
             <MainContentFooter>
               <section>
                 <Stats>
