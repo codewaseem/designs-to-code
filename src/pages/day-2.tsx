@@ -31,7 +31,7 @@ const DashboardContainer = styled.div`
   width: 95%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 283px 1fr;
   grid-template-rows: 118px 315px;
   grid-gap: 35px;
   z-index: 1;
@@ -44,6 +44,12 @@ const DashboardHeader = styled.header`
 
 const DashboardAside = styled.aside`
   background: #2a2847;
+  box-shadow: 0px 8px 25px #27217f;
+  border-radius: 5px;
+  display: grid;
+  padding-top: 114px;
+  justify-items: center;
+  align-content: flex-start;
 `;
 
 const DashboardMain = styled.main`
@@ -62,6 +68,43 @@ const MainContentFooter = styled.footer`
   grid-column: 1 / -1;
 `;
 
+const Button = styled.button`
+  background: #9d74ff;
+  box-shadow: 0px 11px 20px rgba(14, 13, 30, 0.648);
+  border-radius: 5px;
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border: 0;
+  letter-spacing: 1.5px;
+  padding: 17px 61px;
+  color: #ffffff;
+`;
+
+const OvalEffect = styled.div`
+  height: 18px;
+  width: 90px;
+  border-radius: 50%;
+  background: #9992ff;
+  mix-blend-mode: normal;
+  opacity: 0.18;
+`;
+
+const AsideText = styled.p`
+  font-family: Muli;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  width: 173px;
+  color: #ffffff;
+  margin: 20px auto 35px;
+`;
+
 export default function Day2() {
   return (
     <PageContainer>
@@ -69,7 +112,11 @@ export default function Day2() {
         <FancyBorder />
         <DashboardContainer>
           <DashboardHeader />
-          <DashboardAside />
+          <DashboardAside>
+            <OvalEffect />
+            <AsideText>Upgrade to PRO to unlock more features</AsideText>
+            <Button>Upgrade</Button>
+          </DashboardAside>
           <DashboardMain>
             <section></section>
             <section></section>
