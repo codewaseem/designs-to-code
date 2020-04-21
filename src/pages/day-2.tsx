@@ -1,10 +1,37 @@
 import React from "react";
 import styled from "@theme/styled";
+import ProfilePicPng from "~/assets/images/day-2-pic.png";
+
+const BellIcon = () => (
+  <svg
+    width="21"
+    height="24"
+    viewBox="0 0 21 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.5 8.6C16.5 4.95492 13.5451 2 9.9 2C6.25492 2 3.3 4.95492 3.3 8.6C3.3 16.3 0 18.5 0 18.5H19.8C19.8 18.5 16.5 16.3 16.5 8.6"
+      stroke="#73718E"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.8029 22.9C11.4094 23.5785 10.6843 23.9961 9.89995 23.9961C9.11557 23.9961 8.39053 23.5785 7.99695 22.9"
+      stroke="#73718E"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const PageContainer = styled.div`
   background: linear-gradient(143.13deg, #c6c9ff 0%, #999eff 98.17%);
   min-height: 100vh;
   min-width: 100vh;
+  font-family: Muli;
 `;
 
 const PageContent = styled.div`
@@ -40,6 +67,21 @@ const DashboardContainer = styled.div`
 const DashboardHeader = styled.header`
   background: white;
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 45px;
+  border-radius: 10px;
+
+  /* &:hover {
+    box-shadow: 0px 8px 15px #7746f0;
+  } */
+
+  button {
+    padding: 18px 25px;
+    box-shadow: 0px 11px 20px rgba(157, 116, 255, 0.7);
+    border-radius: 5px;
+  }
 `;
 
 const DashboardAside = styled.aside`
@@ -94,7 +136,6 @@ const OvalEffect = styled.div`
 `;
 
 const AsideText = styled.p`
-  font-family: Muli;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -105,21 +146,100 @@ const AsideText = styled.p`
   margin: 20px auto 35px;
 `;
 
+const HeaderNavigation = styled.div`
+  ul {
+    list-style: none;
+    display: flex;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #2a2847;
+    > li {
+      flex: 1;
+
+      &:not(:last-of-type) {
+        margin-right: 45px;
+      }
+
+      &:not(:first-of-type) {
+        mix-blend-mode: normal;
+        opacity: 0.7;
+      }
+    }
+  }
+`;
+
+const HeaderMenuBar = styled.menu`
+  display: flex;
+  align-items: center;
+`;
+
+const NotificationIcon = styled.span`
+  display: inline-block;
+  margin: 0 42px 0 51px;
+  position: relative;
+
+  i {
+    display: inline-block;
+    background: #9d74ff;
+    border-radius: 50%;
+    color: white;
+    width: 17px;
+    height: 17px;
+    font-family: Muli;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateY(50%);
+  }
+`;
+
+const ProfilePic = styled.img`
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border: 2px solid lightgreen;
+`;
+
 export default function Day2() {
   return (
     <PageContainer>
       <PageContent>
         <FancyBorder />
         <DashboardContainer>
-          <DashboardHeader />
+          <DashboardHeader>
+            <HeaderNavigation>
+              <ul>
+                <li>Dashboard</li>
+                <li>Projects</li>
+                <li>Users</li>
+              </ul>
+            </HeaderNavigation>
+            <HeaderMenuBar>
+              <Button>+ Add new segment</Button>
+              <NotificationIcon>
+                <BellIcon />
+                <i>3</i>
+              </NotificationIcon>
+              <ProfilePic src={ProfilePicPng} alt="me" />
+            </HeaderMenuBar>
+          </DashboardHeader>
           <DashboardAside>
             <OvalEffect />
             <AsideText>Upgrade to PRO to unlock more features</AsideText>
             <Button>Upgrade</Button>
           </DashboardAside>
           <DashboardMain>
-            <section></section>
-            <section></section>
+            <section />
+            <section />
             <MainContentFooter />
           </DashboardMain>
         </DashboardContainer>
