@@ -4,6 +4,7 @@ import ProfilePicPng from "~/assets/images/day-2-pic.png";
 import G1 from "~/assets/images/d2-g1.png";
 import G2 from "~/assets/images/d2-g2.png";
 import { Layout } from "../components/Layout";
+import { css } from "@emotion/core";
 
 const BellIcon = () => (
   <svg
@@ -328,7 +329,11 @@ export default function Day2() {
               <MainContentFooter>
                 <section>
                   <Stats>
-                    <StatsColor />
+                    <StatsColor
+                      css={css`
+                        background: #7972e9;
+                      `}
+                    />
                     <StatsText>24% Direct</StatsText>
                   </Stats>
                   <StatsProgressLeft />
@@ -342,7 +347,11 @@ export default function Day2() {
                 </section>
                 <section>
                   <Stats>
-                    <StatsColor />
+                    <StatsColor
+                      css={css`
+                        background: #ad91f1;
+                      `}
+                    />
                     <StatsText>45% Organic</StatsText>
                   </Stats>
                   <StatsProgressRight />
