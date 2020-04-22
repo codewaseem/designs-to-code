@@ -5,6 +5,7 @@ import G1 from "~/assets/images/d2-g1.png";
 import G2 from "~/assets/images/d2-g2.png";
 import { Layout } from "../components/Layout";
 import { css } from "@emotion/core";
+import { SEO } from "../components/SEO";
 
 const BellIcon = () => (
   <svg
@@ -286,6 +287,11 @@ const Plus = styled.span`
 export default function Day2() {
   return (
     <Layout>
+      <SEO
+        title="Day 2 | Daily Design To Code | Waseem Ahmed"
+        description="This is day 2 of my daily design to code challenge."
+        seoImageUrl="/day2.png"
+      />
       <PageContainer>
         <PageContent>
           <FancyBorder />

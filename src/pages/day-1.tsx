@@ -24,8 +24,9 @@ export default function() {
   return (
     <Layout>
       <SEO
-        title="Designs to Code Challenge - Day 1"
-        description="Here I code designs from https://uidesigndaily.com"
+        title="Day 1 | Daily Design To Code | Waseem Ahmed"
+        description="Here I code designs from https://uidesigndaily.com everyday."
+        seoImageUrl="/day1.png"
       />
       <PageContainer>
         <PageContent>
