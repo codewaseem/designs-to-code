@@ -1,25 +1,52 @@
 import React from "react";
-import Helmet, { HelmetProps } from "react-helmet";
+import { Helmet, HelmetProps } from "react-helmet-async";
 import { injectIntl, InjectedIntlProps } from "gatsby-plugin-intl";
 import { Location } from "@reach/router";
-import twitterImage from "~/assets/images/profile-card-1.png";
+import { useStaticQuery, graphql } from "gatsby";
 
 type Props = {
   /** Description text for the description meta tags */
   description?: string;
+  keywords?: string;
 } & HelmetProps &
   InjectedIntlProps;
+
+type SiteMetadataQuery = {
+  siteMetadata: {
+    title: string;
+    description: string;
+    keywords: string;
+    siteUrl: string;
+  };
+};
 
 /**
  * An SEO component that handles all element in the head that can accept
  */
 const SEO: React.FC<Props> = ({
   children,
-  description = "Designs to Code",
+  description = "",
   title,
   intl,
+  keywords = "",
 }) => {
-  const metaDescription = description;
+  const { site }: { site?: SiteMetadataQuery } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            keywords
+            siteUrl
+            lang
+          }
+        }
+      }
+    `
+  );
+
+  const metaDescription = description || site?.siteMetadata.description;
 
   return (
     <Location>
@@ -28,8 +55,11 @@ const SEO: React.FC<Props> = ({
           htmlAttributes={{
             lang: intl.locale,
           }}
-          title={title}
-          titleTemplate="%s | Website"
+          title={title || site?.siteMetadata.title}
+          titleTemplate="%s"
+          link={[
+            { rel: "icon", type: "image/png", href: "/favicon-96x96.png" },
+          ]}
         >
           <meta
             property="keywords"
@@ -37,19 +67,23 @@ const SEO: React.FC<Props> = ({
           />
           <meta property="description" content={metaDescription} />
 
+          <meta
+            property="keywords"
+            content={keywords || site?.siteMetadata.keywords}
+          />
+
           {/* OG tags */}
           <meta
             property="og:url"
-            content={`https://designs-to-code.netlify.app/${location.pathname}`}
+            content={site?.siteMetadata.siteUrl + location.pathname}
           />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={metaDescription} />
           <meta property="og:locale" content={intl.locale} />
-          <meta property="og:image" content={twitterImage} />
-          <meta property="og:image:alt" content={twitterImage} />
+          <meta property="og:image" content="/preview.jpg" />
+          <meta property="og:image:alt" content="/preview.jpg" />
           <meta property="twitter:card" content="summary_large_image" />
-
           {children}
         </Helmet>
       )}
